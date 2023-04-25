@@ -28,7 +28,7 @@ export default async function handler(
     // /api/v3/lego/parts/ の最大508
     for (let i = 1; i < 507; i++) {
       const response = await fetch(
-        `https://rebrickable.com/api/v3/lego/parts/?key=${process.env.NEXT_PUBLIC_API_KEY}&page=${i}`
+        `https://rebrickable.com/api/v3/lego/parts/?key=${process.env.REBRICKABLE_API_KEY}&page=${i}`
       );
       const legoData: PartsList = await response.json();
 
