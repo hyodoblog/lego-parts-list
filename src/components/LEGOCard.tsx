@@ -11,8 +11,8 @@ export const LEGOCard: React.FC<Props> = ({ item }) => {
   }
 
   return (
-    <div className="p-4 max-w-xs list-none rounded border-2 border-gray-300 text-center flex flex-col hover:border-black justify-center">
-      <p>{item.part_num}</p>
+    <div className="p-4 rounded border-2 border-gray-300 text-center flex flex-col hover:border-black justify-center">
+      <p className="truncate">{item.part_num}</p>
       <Image
         className="block m-auto"
         src={item.part_img_url}
