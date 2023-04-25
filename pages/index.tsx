@@ -20,14 +20,13 @@ export default function Home() {
     <main>
       <div className="p-8">
         <ul className="grid justify-center grid-cols-8 gap-3">
-          {legoData.map(
-            (item, i) =>
-              item.part_img_url && (
-                <li key={i}>
-                  <LEGOCard item={item} />
-                </li>
-              )
-          )}
+          {legoData
+            .filter((item) => !!item.part_img_url)
+            .map((item, i) => (
+              <li key={i}>
+                <LEGOCard item={item} />
+              </li>
+            ))}
         </ul>
       </div>
     </main>
