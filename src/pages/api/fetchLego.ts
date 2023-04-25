@@ -22,10 +22,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const results = [];
+  const results: PartsItem[][] = [];
 
   try {
-    for (let i = 1; i < 5; i++) {
+    // /api/v3/lego/parts/ の最大508
+    for (let i = 1; i < 507; i++) {
       const response = await fetch(
         `https://rebrickable.com/api/v3/lego/parts/?key=${process.env.NEXT_PUBLIC_API_KEY}&page=${i}`
       );

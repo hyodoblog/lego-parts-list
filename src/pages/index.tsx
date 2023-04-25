@@ -16,7 +16,7 @@ export default function Home() {
 
   useEffect(() => {
     (async () => {
-      const testRes = await fetch("/api/test");
+      const testRes = await fetch("/api/fetchLego");
       const testData = await testRes.json();
       setLegoData(testData);
     })();
@@ -32,7 +32,7 @@ export default function Home() {
             (lego, i) =>
               lego.part_img_url && (
                 <li
-                  className="p-4 max-w-xs list-none rounded border-2 border-gray-300 text-center flex flex-col justify-center"
+                  className="p-4 max-w-xs list-none rounded border-2 border-gray-300 text-center flex flex-col hover:border-black justify-center"
                   key={i}
                 >
                   <p>{lego.part_num}</p>
